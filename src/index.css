@@ -64,6 +64,53 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground bg-[#F9F9F9]
+  }
+}
+
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background-color: #333; /* Arka plan rengini buradan ayarlayabilirsiniz */
+}
+
+.marquee-content, .marquee-content2 {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  color: #000; /* Yazı rengini buradan ayarlayabilirsiniz */
+  font-size: 1rem; /* Yazı boyutunu buradan ayarlayabilirsiniz */
+}
+
+.marquee-content {
+  animation: marquee 15s linear infinite;
+}
+
+.marquee-content2 {
+  animation: marquee2 15s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  50% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes marquee2 {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(50%);
+  }
+  100% {
+    transform: translateX(100%);
   }
 }
